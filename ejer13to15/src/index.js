@@ -14,20 +14,22 @@ const Header = (props) => {
   )
 }
 const Content = (props) => {
+  console.log("content "+props.parts[0].name);
   return (
     <>
     <Part part={props.parts[0]} />
-    <Part part={props.parts[1]}  />
-    <Part part={props.parts[2]}  />
+    <Part part={props.parts[1]} />
+    <Part part={props.parts[2]} />
     </>
   )
 }
 
 const Part = (props) => {
+  console.log("part "+props.part.name);
   return (
     <>
-     <p>
-      {props.name} {props.exercises}
+     <p>        
+      {props.part.name} {props.part.exercises}
     </p>
     </>
   )
@@ -36,7 +38,7 @@ const Part = (props) => {
 const Total = (props) => {
   let count = 0;
   props.parts.forEach(element => {
-    count+= element.exercises
+    count+= element.exercises;
   });
   return (
     <>
