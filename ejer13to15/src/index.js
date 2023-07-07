@@ -14,7 +14,6 @@ const Header = (props) => {
   )
 }
 const Content = (props) => {
-  console.log("content "+props.parts[0].name);
   return (
     <>
     <Part part={props.parts[0]} />
@@ -25,7 +24,6 @@ const Content = (props) => {
 }
 
 const Part = (props) => {
-  console.log("part "+props.part.name);
   return (
     <>
      <p>        
