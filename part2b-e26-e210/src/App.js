@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import Person from './Person'
-
+import Filter from './Filter'
+import PersonForm from './PersonForm'
+import Persons from './Persons'
 
 const App = () => {
   const [ persons, setPersons ] = useState([
@@ -38,7 +39,6 @@ const App = () => {
       }
     }
   }
-
   const handleSearchChange = (event) => {
     setNewSearch(event.target.value);
   }
@@ -54,54 +54,17 @@ const App = () => {
   return (
     <div>
       <h2>Phonebook</h2>
-      <form onSubmit={addPerson}>
-        <div>
-          filter shown with 
-          <input 
-            value={newSearch}
-            onChange={handleSearchChange}
-          />
-        </div>
-        <div>
-          <h2>Add a new</h2>
-          <table>
-            <tbody>
-            <tr>
-              <td>
-          name: 
-          </td>
-          <td>
-          <input 
-            value={newName}
-            onChange={handleNameChange}
-          />
-          </td>
-          </tr>
-          <tr>
-            <td>
-          tlf: 
-          </td>
-          <td>
-          <input 
-            value={newTlf}
-            onChange={handleTlfChange}
-          />
-          </td>
-          </tr>
-          </tbody>
-          </table>
-        </div>
-        <div>
-          <button type="submit">add</button>
-        </div>
-      </form>
+      <Filter search={newSearch} handleSearchChange={handleSearchChange} />
+      <h2>Add a new</h2>
+      <PersonForm 
+        addPerson={addPerson}
+        newName={newName}
+        handleNameChange={handleNameChange}
+        newTlf={newTlf}
+        handleTlfChange={handleTlfChange}
+      />
       <h2>Numbers</h2>
-      <table>
-        <thead></thead>
-        <tbody>
-          {persons.filter(person=>person.name.indexOf(newSearch)>=0).map(person=><Person key={person.id} person={person}/>)}
-        </tbody>
-      </table>
+      <Persons newSearch={newSearch} persons={persons} />
     </div>
   )
 }
