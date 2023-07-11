@@ -5,7 +5,7 @@ import './index.css';
 import App from './App';
 //import reportWebVitals from './reportWebVitals';
 
-
+/*
 const notes = [
   {
     id: 1,
@@ -25,7 +25,7 @@ const notes = [
     date: '2019-05-30T19:20:14.298Z',
     important: true,
   },
-]
+]*/
 
 
 //const Note = ({ note }) => {
@@ -50,7 +50,7 @@ const App = ({ notes }) => {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App notes={notes}/>
+    <App />
   </React.StrictMode>
 );
 
