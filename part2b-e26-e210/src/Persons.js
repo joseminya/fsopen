@@ -6,7 +6,7 @@ const Persons =({newSearch,persons})=>{
         <div>
             <table>
                 <tbody>
-                    {persons.filter(person=>person.name.indexOf(newSearch)>=0).map(person=><Person key={person.id} person={person}/>)}
+                    {persons.filter(person=>person.name.includes(newSearch)).map(person=><Person key={person.id} person={person}/>)}
                 </tbody>
             </table>
         </div>
