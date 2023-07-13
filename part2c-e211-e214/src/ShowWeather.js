@@ -11,12 +11,14 @@ const ShowWeather=({country})=>{
     const [icono,setIcono]=useState('');
     const [descripcion,setDescripcion]=useState('');
 
-    const params = {
-        access_key: api_key,
-        query: capital
-    }
+    
 
     const hook = () => {
+        const params = {
+            access_key: api_key,
+            query: capital
+        }
+
         axios.get('http://api.weatherstack.com/current', {params})
             .then(response => {
                 const apiResponse = response.data;
@@ -29,7 +31,7 @@ const ShowWeather=({country})=>{
                 console.log(error);
             });
       }  
-      useEffect(hook, [params])
+      useEffect(hook, [api_key,capital])
 
 
     return(
