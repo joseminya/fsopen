@@ -14,7 +14,8 @@ code {
 
 
 .person {
-  border: 2px;
+  margin: 5px;
+  border: 2px solid;
   color: grey;
   padding-top: 5px;
   font-size: 15px;

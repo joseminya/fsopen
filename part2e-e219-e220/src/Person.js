@@ -5,7 +5,7 @@ const Person=({person,handlePersonRemove})=>{
     console.log("persona ",person);
     
     return(
-        <tr className='person'>
+        <tr>
             <td>{person.name}</td>
             <td>{person.tlf}</td>
             <td>

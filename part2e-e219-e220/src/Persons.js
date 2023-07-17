@@ -5,7 +5,7 @@ const Persons =({newSearch,persons,handlePersonRemove})=>{
     console.log("personas",persons);
     return(
         <div>
-            <table>
+            <table className='person'>
                 <tbody>
                     {persons.filter(person=>person.name.includes(newSearch)).map(person=><Person key={person.id} person={person} handlePersonRemove={handlePersonRemove}/>)}
                 </tbody>
